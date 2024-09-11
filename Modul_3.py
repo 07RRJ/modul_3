@@ -18,9 +18,9 @@ if baldur_online:
         print("You can go on baldur(=")
     else:
         if height < 1.2:
-            print("You're to short")
+            print("You're too short")
         else:
-            print("You're to tall")
+            print("You're too tall")
 else:
     print("Baldur is offline")
 
@@ -46,6 +46,23 @@ radius = float(input("How long is your circles radius: "))
 circle_area = radius ** 2 * pi
 print(f"your circles area is {circle_area:.3F} units^2")
 
+rolls_completed = 0
+number_list = []
+while True:
+    try:
+        random_times = int(input("How many numbers to you want to randomize: "))
+        break
+    except:
+        print("plz only real numbers")
+        continue
+while rolls_completed < random_times:
+    die = random.randint(1,6)
+    print(die)
+    rolls_completed += 1
+
+"""
+# my way to randomize dice throws
+
 number_list = []
 while True:
     try:
@@ -59,3 +76,4 @@ for i in range(random_times):
     number_list.append(random_number)
 print(number_list)
 print(f"The avrage value of the random numbers are: {sum(number_list) / len(number_list)}")
+"""
